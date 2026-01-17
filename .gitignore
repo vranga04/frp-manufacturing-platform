@@ -1,0 +1,24 @@
+# ===== Maven =====
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+
+# ===== VS Code (safe even if not used) =====
+.vscode/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log
+
+# ===== Environment / Secrets =====
+.env
+application-*.local.yml
+
+# ===== Docker =====
+**/docker-data/

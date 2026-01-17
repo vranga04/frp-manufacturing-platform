@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: order-service
+  jackson:
+    time-zone: Asia/Kolkata
+  profiles:
+    active: kafka
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/orderdb?options=-c%20TimeZone=UTC
+    username: orderuser
+    password: orderpass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: Asia/Kolkata
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
