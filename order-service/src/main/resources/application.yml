@@ -10,7 +10,7 @@ spring:
     active: kafka
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/orderdb?options=-c%20TimeZone=UTC
+    url: jdbc:postgresql://localhost:5432/orderdb?options=-c%20TimeZone=UTC
     username: orderuser
     password: orderpass
     driver-class-name: org.postgresql.Driver
