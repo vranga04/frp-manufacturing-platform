@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-@Profile("!kafka")
+@Profile("!Kafka")
 @RequiredArgsConstructor
 public class NoOpInventoryEventConsumer implements InventoryEventConsumer {
 
@@ -18,13 +18,13 @@ public class NoOpInventoryEventConsumer implements InventoryEventConsumer {
 
     @Override
     public void onMaterialReserved(MaterialReservedEvent event) {
-        log.info("Saga SUCCESS received: {}", event);
+//        log.info("Saga SUCCESS received: {}", event);
         sagaService.handleMaterialReserved(event);
     }
 
     @Override
     public void onMaterialReservationFailed(MaterialReservationFailedEvent event) {
-        log.info("Saga FAILURE received: {}", event);
+//        log.info("Saga FAILURE received: {}", event);
         sagaService.handleMaterialReservationFailed(event);
     }
 }

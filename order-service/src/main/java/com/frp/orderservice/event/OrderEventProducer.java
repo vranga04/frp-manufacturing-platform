@@ -7,7 +7,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("kafka")
+@Profile("Kafka")
 @RequiredArgsConstructor
 public class OrderEventProducer implements OrderEventPublisher {
 

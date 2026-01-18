@@ -8,7 +8,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("kafka")
+@Profile("Kafka")
 @RequiredArgsConstructor
 public class KafkaOrderEventConsumer {
 

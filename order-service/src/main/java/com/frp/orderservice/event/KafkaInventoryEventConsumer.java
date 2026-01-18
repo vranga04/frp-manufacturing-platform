@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.logging.Logger;
 
 @Component
-@Profile("kafka")
+@Profile("Kafka")
 @RequiredArgsConstructor
 public class KafkaInventoryEventConsumer {
 

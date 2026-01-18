@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-@Profile("!kafka")
+@Profile("!Kafka")
 public class NoOpOrderEventPublisher implements OrderEventPublisher {
 
     @Override

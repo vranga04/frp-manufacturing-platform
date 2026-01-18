@@ -8,26 +8,23 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.logging.Logger;
-
 @Component
-@Profile("kafka")
+@Profile("Kafka")
 @RequiredArgsConstructor
+@Slf4j
 public class KafkaInventoryEventPublisher implements InventoryEventPublisher {
-
-    Logger log = Logger.getLogger(KafkaInventoryEventPublisher.class.getName());
 
     private final KafkaTemplate<String, Object> kafkaTemplate;
 
     @Override
     public void publishMaterialReserved(MaterialReservedEvent event) {
-        log.info("Publishing MaterialReservedEvent for order {}");
-        kafkaTemplate.send("inventory-events", event.getOrderId(), event);
+        log.info("Publishing MaterialReservedEvent for order {}", event.getOrderId());
+        kafkaTemplate.send("inventory-events", String.valueOf(event.getOrderId()), event);
     }
 
     @Override
     public void publishReservationFailed(MaterialReservationFailedEvent event) {
-        log.info("Publishing MaterialReservationFailedEvent for order {}");
-        kafkaTemplate.send("inventory-events", event.getOrderId(), event);
+        log.info("Publishing MaterialReservationFailedEvent for order {}", event.getOrderId());
+        kafkaTemplate.send("inventory-events", String.valueOf(event.getOrderId()), event);
     }
 }
